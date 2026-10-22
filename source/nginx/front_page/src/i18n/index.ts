@@ -4,21 +4,22 @@ import zh from './locales/zh'
 
 const getInitialLocale = () => {
   if (typeof window === 'undefined') {
-    return 'zh'
+    return 'en'
   }
 
   const storedLocale = localStorage.getItem('locale')
-  return storedLocale === 'en' || storedLocale === 'zh' ? storedLocale : 'zh'
+  return storedLocale === 'en' || storedLocale === 'zh' || storedLocale === 'bg' ? storedLocale : 'en'
 }
 
 const i18n = createI18n({
   legacy: false,
   locale: getInitialLocale(),
-  fallbackLocale: 'zh',
+  fallbackLocale: 'en',
   globalInjection: true,
   messages: {
     en,
-    zh
+    zh,
+    bg: en
   }
 })
 

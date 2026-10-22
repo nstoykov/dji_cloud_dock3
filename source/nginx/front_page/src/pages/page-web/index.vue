@@ -5,6 +5,7 @@
       <a-select v-model:value="locale" style="width: 120px" @change="onLocaleChange">
         <a-select-option value="zh">中文</a-select-option>
         <a-select-option value="en">English</a-select-option>
+        <a-select-option value="bg">Български</a-select-option>
       </a-select>
     </div>
     <a-image
