@@ -1,35 +1,38 @@
-# 关于DJI Cloud API Demo 终止维护公告
+# About the End-of-Maintenance Notice for DJI Cloud API Demo
 
-发布日期：2025年4月10日
+Release date: 2025-04-10
 
-1.项目终止维护说明
-即日起，大疆创新(DJI)将停止对DJI Cloud API Demo (地址：https://github.com/dji-sdk/Cloud-API-Demo-Web、https://github.com/dji-sdk/DJI-Cloud-API-Demo）示例项目的更新与技术支持。
-该项目作为官方提供的云端集成参考实现，旨在辅助开发者理解API调用逻辑。并非生产级解决方案，可能存在未修复的安全隐患（如数据泄露、未授权访问等）。请避免在生产环境中直接使用Demo中的代码，若直接使用我们强烈建议您启动安全自查，或避免将基于该Demo的服务暴露于公网环境。
+1. Project maintenance termination notice
+As of today, DJI will stop updating and maintaining the DJI Cloud API Demo sample projects at the following addresses:
+- https://github.com/dji-sdk/Cloud-API-Demo-Web
+- https://github.com/dji-sdk/DJI-Cloud-API-Demo
 
-2.免责声明
-因直接使用Demo代码导致的业务损失、数据风险或第三方纠纷，DJI将不承担任何责任。
+This project serves as the official reference implementation for cloud integration and is intended to help developers understand API call logic. It is not a production-grade solution and may contain unresolved security risks (such as data leakage, unpatched vulnerabilities, or misuse).
 
-3.后续支持
-如有疑问，请联系DJI开发者支持团队（邮箱：developer@dji.com)或访问大疆开发者社区获取最新技术资源。
-感谢您一直以来的理解与支持！
+2. Disclaimer
+DJI will not be liable for any business losses, data risks, or third-party disputes caused by directly using the demo code.
+
+3. Future support
+If you have questions, please contact the DJI Developer Support team at developer@dji.com or visit the DJI Developer Community for the latest technical resources.
+Thank you for your continued understanding and support!
 
 # DJI Cloud API
 
 ## What is the DJI Cloud API?
 
-The launch of the Cloud API mainly solves the problem of developers reinventing the wheel. For developers who do not need in-depth customization of APP, they can directly use DJI Pilot2 to communicate with the third cloud platform, and developers can focus on the development and implementation of cloud service interfaces.
+The launch of the Cloud API primarily solves the problem of developers reinventing the wheel. For developers who do not require deep customization of the APP, they can directly use DJI Pilot 2 to communicate with the cloud platform through the standardized API interface.
 
 ## Docker
 
-If you don't want to install the development environment, you can try deploying with docker. [Click the link to download.](https://terra-sz-hc1pro-cloudapi.oss-cn-shenzhen.aliyuncs.com/c0af9fe0d7eb4f35a8fe5b695e4d0b96/docker/cloud_api_sample_docker.zip)
+If you do not want to install the development environment, you can try deploying with Docker. [Click here to download.](https://terra-sz-hc1pro-cloudapi.oss-cn-shenzhen.aliyuncs.com/c0af9fe0d7e...)
 
 ## Usage
 
-For more documentation, please visit the [DJI Developer Documentation](https://developer.dji.com/doc/cloud-api-tutorial/cn/).
+For additional documentation, please visit the [DJI Developer Documentation](https://developer.dji.com/doc/cloud-api-tutorial/cn/).
 
 ## Latest Release
 
-Cloud API 1.10.0 was released on 7 April 2024. For more information, please visit the [Release Note](https://developer.dji.com/doc/cloud-api-tutorial/cn/).
+Cloud API 1.10.0 was released on 7 April 2024. For more information, please visit the [Release Notes](https://developer.dji.com/doc/cloud-api-tutorial/cn/).
 
 ## License
 

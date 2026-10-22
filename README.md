@@ -1,4 +1,4 @@
-# DJI Cloud API Sample - Dock 3 适配版
+# DJI Cloud API Sample - Dock 3 Adaptation Version
 
 [![Version](https://img.shields.io/badge/version-1.10.0-blue.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
@@ -7,200 +7,201 @@
 [![Vue](https://img.shields.io/badge/Vue-3.2.26-brightgreen.svg)](https://vuejs.org/)
 [![DJI Dock 3](https://img.shields.io/badge/DJI%20Dock%203-Supported-blue.svg)]()
 
-🔗 **代码仓库**: [GitHub](https://github.com/hecongyuan/dji_cloud_dock3) | [Gitee (国内访问速度更快)](https://gitee.com/hecongyuan/dji_cloud_dock3)
-🔗 **开源大疆航线程序**: [GitHub](https://github.com/hecongyuan/dji_way_line)
+🔗 **Code Repository**: [GitHub](https://github.com/hecongyuan/dji_cloud_dock3) | [Gitee (faster in China)](https://gitee.com/hecongyuan/dji_cloud_dock3)
+🔗 **Open-source DJI Flight Mission Program**: [GitHub](https://github.com/hecongyuan/dji_way_line)
 
-> ⚠️ **重要说明**: 
-> - 这是一个**第三方开发**的 DJI Cloud API 适配项目，**非 DJI 官方项目**
-> - 专门针对 **DJI Dock 3（机场3）** 进行了适配和优化
-> - 基于 DJI Cloud SDK 1.2.5 开发
+> ⚠️ **Important Notice**:
+> - This is a **third-party developed** DJI Cloud API adaptation project, **not an official DJI project**
+> - Specifically adapted and optimized for **DJI Dock 3 (Airport 3)**
+> - Developed based on **DJI Cloud SDK 1.2.5**
 
-第三方开发的 DJI 云平台示例项目，提供了与 DJI Dock 3 机场及配套无人机进行云端交互的完整解决方案。
+This is a third-party DJI Cloud Platform sample project that provides a complete solution for cloud interaction with DJI Dock 3 and its compatible drones.
 
-> 💬 **技术交流 & 商用咨询**: 添加微信（见文末二维码）获取技术支持和商用版本服务
+> 💬 **Technical Discussion & Commercial Consultation**: Add WeChat (see QR code at the end) to obtain technical support and commercial version services
 
-## 📋 目录
+## 📋 Table of Contents
 
-- [项目简介](#项目简介)
-- [功能特性](#功能特性)
-- [技术栈](#技术栈)
-- [系统架构](#系统架构)
-- [环境要求](#环境要求)
-- [快速开始](#快速开始)
-- [配置说明](#配置说明)
-- [API 文档](#api-文档)
-- [项目结构](#项目结构)
-- [开发指南](#开发指南)
-- [常见问题](#常见问题)
-- [注意事项](#注意事项)
-- [相关链接](#相关链接)
-- [免责声明](#免责声明)
-- [许可证](#许可证)
-- [贡献](#贡献)
-- [技术支持](#技术支持)
-- [交流与商用](#交流与商用)
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Technology Stack](#technology-stack)
+- [System Architecture](#system-architecture)
+- [Environment Requirements](#environment-requirements)
+- [Quick Start](#quick-start)
+- [Configuration Guide](#configuration-guide)
+- [API Documentation](#api-documentation)
+- [Project Structure](#project-structure)
+- [Development Guide](#development-guide)
+- [FAQ](#faq)
+- [Important Notes](#important-notes)
+- [Related Links](#related-links)
+- [Disclaimer](#disclaimer)
+- [License](#license)
+- [Contributing](#contributing)
+- [Technical Support](#technical-support)
+- [Community & Commercial Use](#community--commercial-use)
 
-## 📖 项目简介
+## 📖 Project Overview
 
-本项目是基于 DJI Cloud API 开发的**第三方云平台示例应用**，专门针对 **DJI Dock 3（机场3）** 进行了适配和功能优化。
+This project is a **third-party cloud platform sample application** based on the DJI Cloud API, specially adapted for **DJI Dock 3 (Airport 3)** with functional optimizations.
 
-### 💻 界面预览 (开源版)
+### 💻 Interface Preview (Open Source Version)
 
 <div align="center">
-  <img src="jt.png" alt="开源版界面截图" width="100%"/>
+  <img src="jt.png" alt="Open source interface screenshot" width="100%"/>
 </div>
 
-### 关于本项目
+### About This Project
 
-- **项目性质**: 第三方开发，非 DJI 官方项目
-- **适配设备**: DJI Dock 3 机场及配套飞行器
-- **技术基础**: 基于 DJI Cloud SDK 1.2.5 和 Cloud API 协议
-- **开发目的**: 为开发者提供 Dock 3 云平台集成的参考实现
+- **Project Nature**: Third-party development, not an official DJI project
+- **Supported Device**: DJI Dock 3 docking station and compatible aircraft
+- **Technical Foundation**: Based on DJI Cloud SDK 1.2.5 and Cloud API protocol
+- **Development Goal**: Provide a reference implementation for Dock 3 cloud platform integration
 
-### 支持的设备
+### Supported Devices
 
-- ✅ **DJI Dock 3** - 第三代智能机场
-- ✅ **DJI Matrice 3D/3TD** - Dock 3 配套飞行器
-- ✅ **DJI RC Plus** - 遥控器（部分功能）
+- ✅ **DJI Dock 3** - Third-generation smart docking station
+- ✅ **DJI Matrice 3D/3TD** - Aircraft compatible with Dock 3
+- ✅ **DJI RC Plus** - Remote controller (some functions)
 
-### 与官方 Demo 的区别
+### Differences from the Official Demo
 
-本项目在 DJI Cloud API 基础上进行了以下适配：
-- 针对 Dock 3 的特性进行了功能优化
-- 适配了 Dock 3 的新增设备状态和控制指令
-- 优化了 Matrice 3 系列飞行器的数据处理
-- 提供了更完整的中文文档和示例
+This project includes the following adaptations based on the DJI Cloud API:
+- Functional optimization specifically for Dock 3 characteristics
+- Adaptation to new Dock 3 device status and control commands
+- Optimization of data processing for Matrice 3 series aircraft
+- More complete Chinese documentation and examples
 
-## ✨ 功能特性
+## ✨ Features
 
-### 核心功能（Dock 3 适配）
-- 🚁 **Dock 3 设备管理** - 机场、无人机、遥控器的接入与管理
-- 📍 **航线任务** - 支持 Dock 3 的航线任务下发、执行监控
-- 📹 **实时直播** - 支持 RTMP、RTSP、WebRTC、GB28181 等多种协议
-- 📷 **媒体管理** - Matrice 3D/3TD 照片/视频上传、下载、预览
-- 🗺️ **地图服务** - 设备定位、航线展示、禁飞区管理
-- 📊 **设备监控** - Dock 3 OSD 数据、HMS 健康管理、设备状态监控
-- 🔄 **固件升级** - Dock 3 及飞行器固件在线升级
-- 📝 **日志管理** - 设备日志上传与分析
-- ⚙️ **远程控制** - 云端遥控、相机控制、云台控制
+### Core Features (Dock 3 Adaptation)
+- 🚁 **Dock 3 Device Management** - Access and management of docks, aircraft, and remote controllers
+- 📍 **Mission Planning** - Supports task dispatch and execution monitoring for Dock 3
+- 📹 **Live Streaming** - Supports RTMP, RTSP, WebRTC, GB28181 and other protocols
+- 📷 **Media Management** - Upload, download, preview, and manage photos/videos for Matrice 3D/3TD
+- 🗺️ **Map Services** - Device positioning, route display, and no-fly-zone management
+- 📊 **Device Monitoring** - Dock 3 OSD data, HMS health management, and device status monitoring
+- 🔄 **Firmware Upgrade** - Online firmware upgrade for Dock 3 and aircraft
+- 📝 **Log Management** - Device log upload and analysis
+- ⚙️ **Remote Control** - Cloud remote control, camera control, and gimbal control
 
-### 高级功能
-- 🔐 JWT 身份认证
-- 🔌 MQTT 消息通信
-- 🌐 WebSocket 实时推送
-- 📦 对象存储集成（MinIO/阿里云 OSS/AWS S3）
-- 🎯 飞行区域管理
-- 🔧 设备配置同步
+### Advanced Features
+- 🔐 JWT authentication
+- 🔌 MQTT communication
+- 🌐 WebSocket real-time push
+- 📦 Object storage integration (MinIO / Alibaba OSS / AWS S3)
+- 🎯 Flight area management
+- 🔧 Device configuration synchronization
 
-## 🛠️ 技术栈
+## 🛠️ Technology Stack
 
-### 后端
-- **框架**: Spring Boot 2.7.12
-- **语言**: Java 11
-- **数据库**: MySQL 8.0
-- **缓存**: Redis
-- **消息队列**: MQTT (Eclipse Paho)
+### Backend
+- **Framework**: Spring Boot 2.7.12
+- **Language**: Java 11
+- **Database**: MySQL 8.0
+- **Cache**: Redis
+- **Message Queue**: MQTT (Eclipse Paho)
 - **ORM**: MyBatis Plus 3.4.2
-- **对象存储**: MinIO / 阿里云 OSS / AWS S3
-- **API 文档**: Swagger/OpenAPI
+- **Object Storage**: MinIO / Alibaba OSS / AWS S3
+- **API Documentation**: Swagger/OpenAPI
 
-### 前端
-- **框架**: Vue 3.2.26
-- **构建工具**: Vite 2.4.0
-- **UI 组件**: Ant Design Vue 2.2.8
-- **地图**: 高德地图 (AMap)
-- **视频播放**: flv.js, Agora RTC SDK
-- **状态管理**: Vuex 4.0.2
-- **路由**: Vue Router 4
-- **HTTP 客户端**: Axios
-- **实时通信**: MQTT.js, WebSocket
+### Frontend
+- **Framework**: Vue 3.2.26
+- **Build Tool**: Vite 2.4.0
+- **UI Components**: Ant Design Vue 2.2.8
+- **Map**: AMap
+- **Video Playback**: flv.js, Agora RTC SDK
+- **State Management**: Vuex 4.0.2
+- **Routing**: Vue Router 4
+- **HTTP Client**: Axios
+- **Real-time Communication**: MQTT.js, WebSocket
 
-## 🏗️ 系统架构
+## 🏗️ System Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                         前端应用 (Vue 3)                      │
+│                         Frontend App (Vue 3)                 │
 │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐   │
-│  │ 设备管理 │  │ 航线任务 │  │ 实时直播 │  │ 媒体管理 │   │
+│  │ Device Mgmt │ │ Mission Mgmt │ │ Live Stream │ │ Media Mgmt │ │
 │  └──────────┘  └──────────┘  └──────────┘  └──────────┘   │
 └─────────────────────────────────────────────────────────────┘
-           │                    │                    │
-           ▼                    ▼                    ▼
+            │                    │                    │
+            ▼                    ▼                    ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                    后端服务 (Spring Boot)                     │
+│                    Backend Service (Spring Boot)            │
 │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐   │
 │  │ REST API │  │  MQTT    │  │ WebSocket│  │ Cloud SDK│   │
 │  └──────────┘  └──────────┘  └──────────┘  └──────────┘   │
 └─────────────────────────────────────────────────────────────┘
-           │                    │                    │
-           ▼                    ▼                    ▼
+            │                    │                    │
+            ▼                    ▼                    ▼
 ┌──────────────┐  ┌──────────────┐  ┌──────────────┐
-│    MySQL     │  │     Redis    │  │  对象存储     │
+│    MySQL     │  │     Redis    │  │ Object Storage │
 └──────────────┘  └──────────────┘  └──────────────┘
-           │
-           ▼
+            │
+            ▼
 ┌─────────────────────────────────────────────────────────────┐
 │                      MQTT Broker                             │
 └─────────────────────────────────────────────────────────────┘
-           │
-           ▼
+            │
+            ▼
 ┌─────────────────────────────────────────────────────────────┐
 │              DJI Dock 3 + Matrice 3D/3TD                     │
 └─────────────────────────────────────────────────────────────┘
 ```
 
-## 💻 环境要求
+## 💻 Environment Requirements
 
-### 必需环境
-- **JDK**: 11 或更高版本
-- **Maven**: 3.6+ 
-- **Node.js**: 14.0+ 
-- **npm/yarn/pnpm**: 任意包管理器
+### Required Environment
+- **JDK**: 11 or higher
+- **Maven**: 3.6+
+- **Node.js**: 14.0+
+- **npm/yarn/pnpm**: any package manager
 
-### 依赖服务
+### Dependent Services
 - **MySQL**: 8.0+
 - **Redis**: 5.0+
-- **MQTT Broker**: EMQX/Mosquitto 等
-- **对象存储**: MinIO/阿里云 OSS/AWS S3（可选）
+- **MQTT Broker**: EMQX/Mosquitto and others
+- **Object Storage**: MinIO / Alibaba OSS / AWS S3 (optional)
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-### 1. 克隆项目
+### 1. Clone the Project
 
 ```bash
-# 从 GitHub 克隆
+# Clone from GitHub
 git clone https://github.com/hecongyuan/dji_cloud_dock3.git
 
-# 或者从 Gitee 克隆 (国内访问速度更快)
+# Or clone from Gitee (faster in China)
 git clone https://gitee.com/hecongyuan/dji_cloud_dock3.git
 
 cd dji_cloud_dock3
+```
 
-### 2. 初始化数据库
+### 2. Initialize the Database
 
 ```bash
-# 连接到 MySQL 数据库
+# Connect to the MySQL database
 mysql -u root -p
 
-# 创建数据库
+# Create the database
 CREATE DATABASE cloud_sample CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-# 导入初始化脚本
+# Import the initialization script
 mysql -u root -p cloud_sample < source/mysql/init.sql
 ```
 
-### 3. 配置后端
+### 3. Configure the Backend
 
-> 📖 **详细配置说明请参考 [CONFIG.md](CONFIG.md) 文档**
+> 📖 **For detailed configuration instructions, please refer to the [CONFIG.md](CONFIG.md) document**
 
-复制配置文件模板：
+Copy the configuration template:
 
 ```bash
 cd source/backend_service/sample/src/main/resources
 cp application.yml.example application.yml
 ```
 
-编辑 `application.yml`，修改以下关键配置：
+Edit `application.yml` and update the key settings:
 
 ```yaml
 spring:
@@ -235,9 +236,9 @@ cloud-api:
     license: your_app_license
 ```
 
-> ⚠️ **重要**: 请在 [DJI 开发者平台](https://developer.dji.com/user/apps/#all) 创建应用并获取 App ID、App Key 和 License
+> ⚠️ **Important**: Please create an application on the [DJI Developer Platform](https://developer.dji.com/user/apps/#all) to obtain the App ID, App Key, and License
 
-### 4. 启动后端
+### 4. Start the Backend
 
 ```bash
 cd source/backend_service
@@ -246,34 +247,34 @@ cd sample
 mvn spring-boot:run
 ```
 
-后端服务将在 `http://localhost:6789` 启动
+The backend service will start at `http://localhost:6789`
 
-### 5. 设备接入配置
+### 5. Device Access Configuration
 
-#### Dock 3 设备接入
+#### Dock 3 Device Access
 
-1. 在 Dock 3 设备上配置云平台信息：
-   - 平台地址: `http://your-server-ip:6789`
-   - MQTT 地址: `mqtt://your-server-ip:1883`
-   - App ID: 在配置文件中设置的 `cloud-api.app.id`
+1. Configure the cloud platform information on the Dock 3 device:
+    - Platform address: `http://your-server-ip:6789`
+    - MQTT address: `mqtt://your-server-ip:1883`
+    - App ID: set in the configuration file as `cloud-api.app.id`
 
-2. 确保 Dock 3 能够访问到服务器的以下端口：
-   - `6789` - HTTP API 端口
-   - `1883` - MQTT 端口
-   - `8083` - MQTT WebSocket 端口（DRC 远程控制）
+2. Ensure the Dock 3 can access the server through the following ports:
+    - `6789` - HTTP API port
+    - `1883` - MQTT port
+    - `8083` - MQTT WebSocket port (DRC remote control)
 
-3. 设备上线后，可在前端页面的设备管理中查看设备状态
+3. After the device comes online, you can view its status in the frontend device management page
 
-### 6. 启动前端
+### 6. Start the Frontend
 
-复制前端配置文件：
+Copy the frontend configuration file:
 
 ```bash
 cd source/nginx/front_page/src/api/http
 cp config.ts.example config.ts
 ```
 
-编辑 `config.ts`，配置后端地址和 DJI 凭证：
+Edit `config.ts` and configure the backend address and DJI credentials:
 
 ```typescript
 export const CURRENT_CONFIG = {
@@ -285,7 +286,7 @@ export const CURRENT_CONFIG = {
 }
 ```
 
-安装依赖并启动：
+Install dependencies and start:
 
 ```bash
 cd source/nginx/front_page
@@ -293,17 +294,17 @@ npm install
 npm run serve
 ```
 
-前端应用将在 `http://localhost:5173` 启动（端口可能不同）
+The frontend application will start at `http://localhost:5173` (port may differ)
 
-### 7. 访问应用
+### 7. Access the Application
 
-- **前端应用**: http://localhost:5173
-- **后端 API 文档**: http://localhost:6789/swagger-ui/index.html
-- **WebSocket 地址**: ws://localhost:6789/api/v1/ws
+- **Frontend Application**: http://localhost:5173
+- **Backend API Documentation**: http://localhost:6789/swagger-ui/index.html
+- **WebSocket Address**: ws://localhost:6789/api/v1/ws
 
-## ⚙️ 配置说明
+## ⚙️ Configuration Guide
 
-### 数据库配置
+### Database Configuration
 
 ```yaml
 spring:
@@ -317,12 +318,12 @@ spring:
       max-active: 20
 ```
 
-### MQTT 配置
+### MQTT Configuration
 
-支持两种 MQTT 连接：
+The system supports two MQTT connections:
 
-1. **BASIC** - 基础 MQTT 连接（设备通信）
-2. **DRC** - 远程控制 MQTT 连接
+1. **BASIC** - Basic MQTT connection (device communication)
+2. **DRC** - Remote control MQTT connection
 
 ```yaml
 mqtt:
@@ -340,9 +341,9 @@ mqtt:
     path: /mqtt
 ```
 
-### 对象存储配置
+### Object Storage Configuration
 
-#### MinIO（推荐用于开发）
+#### MinIO (Recommended for Development)
 
 ```yaml
 oss:
@@ -355,7 +356,7 @@ oss:
   expire: 3600
 ```
 
-#### 阿里云 OSS
+#### Alibaba Cloud OSS
 
 ```yaml
 oss:
@@ -382,27 +383,27 @@ oss:
   bucket: your_bucket
 ```
 
-### 直播配置
+### Live Streaming Configuration
 
-支持多种直播协议：
+The project supports multiple live streaming protocols:
 
 ```yaml
 livestream:
   url:
-    # RTMP 推流
+    # RTMP push
     rtmp:
       url: rtmp://localhost:1935/rtp/
-    
-    # RTSP 流
+
+    # RTSP stream
     rtsp:
       username: dji-cloud-api
       password: 123456
       port: 8554
-    
+
     # WebRTC (WHIP)
     whip:
       url: http://localhost:8088/rtc/v1/whip/?app=live&stream=
-    
+
     # GB28181
     gb28181:
       serverIP: localhost
@@ -410,59 +411,59 @@ livestream:
       serverID: 41010500002000000001
 ```
 
-## 📚 API 文档
+## 📚 API Documentation
 
 ### Swagger UI
 
-启动后端服务后，访问：http://localhost:6789/swagger-ui/index.html
+After starting the backend service, visit: http://localhost:6789/swagger-ui/index.html
 
-### 主要 API 端点
+### Main API Endpoints
 
-| 模块 | 端点 | 说明 |
-|------|------|------|
-| 设备管理 | `/manage/api/v1/devices` | 设备列表、详情、绑定 |
-| 航线任务 | `/wayline/api/v1/workspaces/{workspace_id}/jobs` | 任务创建、执行、监控 |
-| 媒体文件 | `/media/api/v1/workspaces/{workspace_id}/files` | 文件上传、下载、删除 |
-| 实时控制 | `/control/api/v1/devices/{device_sn}/drc` | 远程控制、相机控制 |
-| 地图服务 | `/map/api/v1/workspaces/{workspace_id}/elements` | 地图元素管理 |
-| 存储服务 | `/storage/api/v1/workspaces/{workspace_id}/sts` | 临时凭证获取 |
+| Module | Endpoint | Description |
+|--------|----------|-------------|
+| Device Management | `/manage/api/v1/devices` | Device list, details, binding |
+| Mission Planning | `/wayline/api/v1/workspaces/{workspace_id}/jobs` | Task creation, execution, monitoring |
+| Media Files | `/media/api/v1/workspaces/{workspace_id}/files` | Upload, download, delete |
+| Real-time Control | `/control/api/v1/devices/{device_sn}/drc` | Remote control, camera control |
+| Map Services | `/map/api/v1/workspaces/{workspace_id}/elements` | Map element management |
+| Storage Service | `/storage/api/v1/workspaces/{workspace_id}/sts` | Temporary credential acquisition |
 
-### WebSocket 事件
+### WebSocket Events
 
-连接地址：`ws://localhost:6789/api/v1/ws`
+Connection address: `ws://localhost:6789/api/v1/ws`
 
-主要事件类型：
-- `device_online` - 设备上线
-- `device_offline` - 设备离线
-- `device_osd` - 设备状态数据
-- `device_hms` - 设备健康信息
-- `flight_task_progress` - 任务执行进度
+Main event types:
+- `device_online` - device online
+- `device_offline` - device offline
+- `device_osd` - device status data
+- `device_hms` - device health information
+- `flight_task_progress` - mission execution progress
 
-## 📁 项目结构
+## 📁 Project Structure
 
 ```
 Cloud-API-Demo/
 ├── source/
-│   ├── backend_service/          # 后端项目
+│   ├── backend_service/          # Backend project
 │   │   ├── cloud-sdk/           # DJI Cloud SDK
-│   │   └── sample/              # 示例应用
-│   ├── nginx/front_page/         # 前端项目
-│   │   ├── src/                 # 前端源码
+│   │   └── sample/              # Sample application
+│   ├── nginx/front_page/        # Frontend project
+│   │   ├── src/                 # Frontend source code
 │   │   ├── package.json
 │   │   └── vite.config.ts
-│   └── mysql/                   # 数据库脚本
-│       └── init.sql             # 初始化 SQL
+│   └── mysql/                  # Database scripts
+│       └── init.sql             # Initialization SQL
 ├── LICENSE
 └── README.md
 ```
 
-## 🔧 开发指南
+## 🔧 Development Guide
 
-### 后端开发
+### Backend Development
 
-#### 1. 实现 Cloud SDK 方法
+#### 1. Implement a Cloud SDK Method
 
-创建服务类继承 SDK 抽象类：
+Create a service class that extends the SDK abstract class:
 
 ```java
 @Service
@@ -470,15 +471,15 @@ public class DeviceServiceImpl extends AbstractDeviceService {
     
     @Override
     public void updateTopoOnline(UpdateTopo topo) {
-        // 实现设备上线逻辑
+        // Implement device online logic
         log.info("Device online: {}", topo.getDeviceSn());
     }
 }
 ```
 
-#### 2. 调用 Cloud SDK 方法
+#### 2. Call the Cloud SDK Method
 
-注入服务并调用：
+Inject the service and call it:
 
 ```java
 @Service
@@ -493,9 +494,9 @@ public class WaylineJobService {
 }
 ```
 
-#### 3. 实现 HTTP 接口
+#### 3. Implement an HTTP Interface
 
-实现 SDK 定义的接口：
+Implement the interface defined by the SDK:
 
 ```java
 @RestController
@@ -503,15 +504,15 @@ public class DeviceController implements IDeviceApi {
     
     @Override
     public HttpResultResponse<List<Device>> getDevices() {
-        // 实现获取设备列表
+        // Implement device list retrieval
         return HttpResultResponse.success(deviceList);
     }
 }
 ```
 
-### 前端开发
+### Frontend Development
 
-#### 1. API 调用
+#### 1. API Calls
 
 ```typescript
 import { getDevices } from '@/api/manage'
@@ -524,7 +525,7 @@ const fetchDevices = async () => {
 }
 ```
 
-#### 2. MQTT 订阅
+#### 2. MQTT Subscription
 
 ```typescript
 import { useMqtt } from '@/components/g-map/use-mqtt'
@@ -536,7 +537,7 @@ subscribe('sys/product/+/status', (topic, message) => {
 })
 ```
 
-#### 3. WebSocket 连接
+#### 3. WebSocket Connection
 
 ```typescript
 import { useConnectWebsocket } from '@/hooks/use-connect-websocket'
@@ -549,189 +550,384 @@ on('device_osd', (data) => {
 })
 ```
 
-### 添加新功能
+### Adding a New Feature
 
-1. **后端**：
-   - 在 `source/backend_service/sample/src/main/java/com/dji/sample/` 下创建新模块
-   - 定义 Controller、Service、DAO
-   - 在 `application.yml` 中添加配置
+1. **Backend**:
+    - Create a new module under `source/backend_service/sample/src/main/java/com/dji/sample/`
+    - Define Controller, Service, and DAO
+    - Add configuration in `application.yml`
 
-2. **前端**：
-   - 在 `source/nginx/front_page/src/api/` 下添加 API 接口
-   - 在 `source/nginx/front_page/src/components/` 下创建组件
-   - 在 `source/nginx/front_page/src/pages/` 下添加页面
-   - 在 `router` 中配置路由
+2. **Frontend**:
+    - Add API interfaces under `source/nginx/front_page/src/api/`
+    - Create components under `source/nginx/front_page/src/components/`
+    - Add pages under `source/nginx/front_page/src/pages/`
+    - Configure routes in the router
 
-## 🐛 常见问题
+## 🐛 FAQ
 
-### 1. 后端启动失败
+### 1. Backend Startup Fails
 
-**问题**: 数据库连接失败
-```
+**Problem**: Database connection failure
+```text
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 ```
 
-**解决方案**:
-- 检查 MySQL 是否启动
-- 确认数据库连接配置正确
-- 检查防火墙设置
+**Solution**:
+- Check whether MySQL is running
+- Confirm the database connection settings are correct
+- Check firewall settings
 
-### 2. MQTT 连接失败
+### 2. MQTT Connection Fails
 
-**问题**: 无法连接到 MQTT Broker
+**Problem**: Unable to connect to the MQTT Broker
 
-**解决方案**:
-- 确认 MQTT Broker 已启动
-- 检查端口是否被占用
-- 验证用户名密码是否正确
+**Solution**:
+- Confirm the MQTT Broker is running
+- Check whether the ports are occupied
+- Verify the username and password
 
-### 3. 前端无法访问后端 API
+### 3. Frontend Cannot Access Backend API
 
-**问题**: CORS 跨域错误
+**Problem**: CORS cross-origin error
 
-**解决方案**:
-- 后端已配置 CORS，检查 `CorsFilter` 配置
-- 确认前端配置的后端地址正确
+**Solution**:
+- CORS is already configured in the backend; check the `CorsFilter` configuration
+- Confirm the frontend is using the correct backend address
 
-### 4. 对象存储上传失败
+### 4. Object Storage Upload Fails
 
-**问题**: MinIO 连接失败
+**Problem**: MinIO connection failure
 
-**解决方案**:
-- 确认 MinIO 服务已启动
-- 检查 bucket 是否已创建
-- 验证访问密钥是否正确
+**Solution**:
+- Confirm the MinIO service is running
+- Check whether the bucket has been created
+- Verify the access keys are correct
 
-### 5. Dock 3 设备无法上线
+### 5. Dock 3 Device Fails to Come Online
 
-**问题**: Dock 3 连接不上平台
+**Problem**: Dock 3 cannot connect to the platform
 
-**解决方案**:
-- 检查 Dock 3 网络连接是否正常
-- 确认 Dock 3 配置的平台地址和端口正确
-- 验证 App ID、Key、License 配置正确
-- 检查服务器防火墙是否开放了必要端口（6789、1883、8083）
-- 查看后端日志 `logs/cloud-api-sample.log` 排查问题
+**Solution**:
+- Check the network connection of the Dock 3
+- Confirm the platform address and port configured on the Dock 3 are correct
+- Verify the App ID, Key, and License are configured correctly
+- Check whether the server firewall has opened the required ports (`6789`, `1883`, `8083`)
+- Review backend logs at `logs/cloud-api-sample.log`
 
-### 6. 航线任务执行失败
+### 6. Mission Execution Fails
 
-**问题**: 任务下发后 Dock 3 无响应
+**Problem**: No response after the task is sent to the Dock 3
 
-**解决方案**:
-- 确认航线文件格式符合 Dock 3 要求
-- 检查 Dock 3 当前状态是否允许执行任务
-- 查看设备 HMS 信息，确认无异常告警
-- 检查 MQTT 消息是否正常收发
+**Solution**:
+- Confirm the mission file format matches Dock 3 requirements
+- Check whether the Dock 3 current state allows task execution
+- Review HMS information for abnormal alarms
+- Check whether MQTT messages are sending and receiving normally
 
-### 7. 视频直播无法播放
+### 7. Live Video Cannot Play
 
-**问题**: 前端无法看到实时视频
+**Problem**: Frontend cannot display real-time video
 
-**解决方案**:
-- 确认直播服务（RTMP/WebRTC）已正确配置
-- 检查 Dock 3 是否已开启直播推流
-- 验证网络带宽是否足够
-- 查看浏览器控制台错误信息
+**Solution**:
+- Confirm the live streaming service (RTMP/WebRTC) is configured correctly
+- Check whether the Dock 3 has enabled live stream push
+- Verify network bandwidth is sufficient
+- Review browser console errors
 
-## 📌 注意事项
+## 📌 Important Notes
 
-### Dock 3 特别说明
+### Dock 3 Specific Notes
 
-1. **设备兼容性**: 本项目专门针对 Dock 3 适配，其他型号设备可能需要额外适配
-2. **固件版本**: 建议 Dock 3 固件版本保持最新，以获得最佳兼容性
-3. **网络要求**: Dock 3 需要稳定的网络连接，建议使用有线网络或 4G/5G
-4. **App 凭证**: 必须在 DJI 开发者平台创建应用并获取有效的 License
+1. **Device Compatibility**: This project is specifically adapted for Dock 3; other models may require additional adaptation
+2. **Firmware Version**: It is recommended to keep the Dock 3 firmware updated for best compatibility
+3. **Network Requirements**: Dock 3 requires a stable network connection; a wired or 4G/5G connection is recommended
+4. **App Credentials**: You must create an application on the DJI Developer Platform and obtain a valid License
 
-### 生产环境部署建议
+### Production Deployment Recommendations
 
-1. **安全加固**:
-   - 修改默认的数据库密码
-   - 配置 HTTPS 证书
-   - 启用 MQTT 认证和 TLS
-   - 配置防火墙规则
+1. **Security Hardening**:
+    - Change the default database password
+    - Configure HTTPS certificates
+    - Enable MQTT authentication and TLS
+    - Configure firewall rules
 
-2. **性能优化**:
-   - 使用 Nginx 反向代理
-   - 配置 Redis 集群
-   - 优化数据库索引
-   - 启用 CDN 加速
+2. **Performance Optimization**:
+    - Use Nginx as a reverse proxy
+    - Configure Redis clustering
+    - Optimize database indexes
+    - Enable CDN acceleration
 
-3. **监控告警**:
-   - 配置日志收集和分析
-   - 设置系统监控告警
-   - 定期备份数据库
+3. **Monitoring & Alerts**:
+    - Configure log collection and analysis
+    - Set up system monitoring alerts
+    - Back up the database regularly
 
-## 🔗 相关链接
+## 🔗 Related Links
 
-- **GitHub 仓库**: https://github.com/hecongyuan/dji_cloud_dock3
-- **Gitee 仓库**: https://gitee.com/hecongyuan/dji_cloud_dock3
-- **开源大疆航线程序**: https://github.com/hecongyuan/dji_way_line
-- **DJI 开发者平台**: https://developer.dji.com
-- **Cloud API 文档**: https://developer.dji.com/doc/cloud-api-tutorial/cn/
-- **DJI 技术支持**: https://sdk-forum.dji.net/
+- **GitHub Repository**: https://github.com/hecongyuan/dji_cloud_dock3
+- **Gitee Repository**: https://gitee.com/hecongyuan/dji_cloud_dock3
+- **Open-source DJI Flight Mission Program**: https://github.com/hecongyuan/dji_way_line
+- **DJI Developer Platform**: https://developer.dji.com
+- **Cloud API Documentation**: https://developer.dji.com/doc/cloud-api-tutorial/cn/
+- **DJI Technical Support**: https://sdk-forum.dji.net/
 
-## ⚠️ 免责声明
+## ⚠️ Disclaimer
 
-本项目为第三方开发的示例项目，仅供学习和参考使用。使用本项目产生的任何问题，开发者不承担责任。生产环境使用请自行评估风险并进行充分测试。
+This project is a third-party sample project for learning and reference only. The developer is not responsible for any issues arising from its use. For production deployments, please evaluate the risks and conduct adequate security and performance assessments.
 
-DJI、DJI Dock 3、Matrice 3D/3TD 等为 DJI 公司的注册商标。本项目与 DJI 公司无官方关联。
+DJI, DJI Dock 3, Matrice 3D/3TD, and related names are registered trademarks of DJI. This project is not officially affiliated with DJI.
 
-## 📝 许可证
+## 📝 License
 
-本项目采用 MIT 许可证 - 详见 [LICENSE](LICENSE) 文件
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
-## 🤝 贡献
+## 🤝 Contributing
 
-欢迎提交 Issue 和 Pull Request！
+Contributions in the form of Issues and Pull Requests are welcome!
 
-如果这个项目对你有帮助，请给个 Star ⭐️
+If this project is helpful to you, please give it a Star ⭐️
 
-## 📞 技术支持
+## 📞 Technical Support
 
-- **Issues**: 在本仓库提交 Issue
-- **DJI 官方文档**: https://developer.dji.com/doc/cloud-api-tutorial/cn/
-- **DJI 开发者论坛**: https://sdk-forum.dji.net/
+- **Issues**: Submit an Issue in this repository
+- **DJI Official Documentation**: https://developer.dji.com/doc/cloud-api-tutorial/cn/
+- **DJI Developer Forum**: https://sdk-forum.dji.net/
 
-## 💬 交流与商用
+## 💬 Community & Commercial Use
 
-### 技术交流
+### Technical Exchange
 
-如需技术交流、问题咨询或商用版本支持，欢迎添加微信：
-
-<div align="center">
-  <img src="wx.JPG" alt="微信二维码" width="200"/>
-  <p><strong>扫码加作者进入社群，备注：dji_cloud_dock3</strong></p>
-</div>
-
-### 商用版本
+If you need technical exchange, product consultation, or commercial support, please add WeChat:
 
 <div align="center">
-  <img src="doc/9B3EA1D0BE249C3D52B4FF9B09E604BE.png" alt="商业版界面截图" width="100%"/>
+  <img src="wx.JPG" alt="WeChat QR code" width="200"/>
+  <p><strong>Scan the code to add the author and join the community. Please note: dji_cloud_dock3</strong></p>
 </div>
 
-本项目为开源学习版本。我们同时提供 **商业版整套解决方案**，包含以下核心产品：
+### Commercial Version
 
-| 产品模块 | 说明 |
-|---------|------|
-| 🗺️ **商业版航线** | 专业航线规划与管理系统，支持复杂任务编排、多机协同、定时巡检、航线库管理，提供航线编辑器与 KMZ 导出 |
-| 🏗️ **三维重建平台** | 高精度三维模型自动生成，支持倾斜摄影、正射影像输出、点云处理，实景三维可视化与量测分析 |
-| 🤖 **AI 算力平台** | 智能识别与分析处理平台，适配**国产算能（Sophon）**及**英伟达 NVIDIA Jetson**，支持边缘计算 + 云端协同推理 |
+<div align="center">
+  <img src="doc/9B3EA1D0BE249C3D52B4FF9B09E604BE.png" alt="Commercial version screenshot" width="100%"/>
+</div>
 
-> 💰 **整套价格：¥13.8万**（含平台授权 + 部署 + 技术支持）
+This project is the open-source learning version. We also provide a **commercial full solution**, including the following core products:
+
+| Product Module | Description |
+|----------------|-------------|
+| 🗺️ **Commercial Flight Route** | Professional route planning and management system with support for complex mission orchestration, multi-drone coordination, scheduled inspections, route library management, and route editor/KMZ export |
+| 🏗️ **3D Reconstruction Platform** | High-precision 3D model generation, supporting oblique photography, orthophoto output, point cloud processing, realistic 3D visualization, and measurement analysis |
+| 🤖 **AI Computing Platform** | Intelligent recognition and analysis platform adapted to **Sophon** and **NVIDIA Jetson**, supporting edge computing + cloud collaboration inference |
+
+> 💰 **Total price: ¥13.8万** (includes platform licensing + deployment + technical support)
 >
-> 📞 **欢迎咨询**：添加微信（见下方二维码）获取详细方案，支持定制开发
+> 📞 **Welcome to inquire**: Add WeChat (see QR code below) to get a detailed solution and custom development support
 
-如需以下额外服务，也可联系微信咨询：
+If you also need additional services, please contact us via WeChat:
 
-- 🏢 **企业级定制开发** - 根据业务需求定制功能
-- 🔧 **技术支持服务** - 提供专业的技术支持和培训
-- 🚀 **部署实施服务** - 协助生产环境部署和优化
-- 📊 **功能扩展开发** - 开发更多高级功能模块
-- 🔐 **安全加固服务** - 企业级安全方案设计与实施
-- 📱 **移动端开发** - iOS/Android 原生应用开发
+- 🏢 **Enterprise Custom Development** - Function customization according to business needs
+- 🔧 **Technical Support Services** - Professional technical support and training
+- 🚀 **Deployment Implementation Services** - Support for production deployment and optimization
+- 📊 **Feature Expansion Development** - Development of additional advanced modules
+- 🔐 **Security Hardening Services** - Enterprise security architecture design and implementation
+- 📱 **Mobile App Development** - iOS/Android native app development
 
-> 📖 **详细服务内容和案例请查看 [CONTACT.md](CONTACT.md)**
+> 📖 **For detailed service content and case studies, please refer to [CONTACT.md](CONTACT.md)**
 
 ---
 
-**注意**: 本项目为第三方开发，仅供学习和参考使用。生产环境部署请根据实际情况进行安全加固和性能优化。
+**Note**: This project is a third-party development project intended for learning and reference only. For production deployment, please carry out appropriate hardening and performance tuning based on actual conditions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
